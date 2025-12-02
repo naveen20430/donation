@@ -9,14 +9,14 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Check if POST request
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /donation/donate.php');
+    header('Location: /donate.php');
     exit;
 }
 
 // Verify CSRF token
 if (!isset($_POST['csrf_token']) || !verifyCSRFToken($_POST['csrf_token'])) {
     $_SESSION['error'] = 'Invalid security token. Please try again.';
-    header('Location: /donation/donate.php');
+    header('Location: /donate.php');
     exit;
 }
 
@@ -54,7 +54,7 @@ if ($campaignId > 0) {
 
 if (!empty($errors)) {
     $_SESSION['error'] = implode(' ', $errors);
-    header('Location: /donation/donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
+    header('Location: /donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
     exit;
 }
 
@@ -66,7 +66,7 @@ if (isset($_FILES['proof_file']) && $_FILES['proof_file']['error'] === UPLOAD_ER
         $proofFile = $uploadResult['filename'];
     } else {
         $_SESSION['error'] = $uploadResult['message'];
-        header('Location: /donation/donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
+        header('Location: /donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
         exit;
     }
 }
@@ -95,7 +95,7 @@ try {
     $pdo->commit();
 
     // Redirect to thank you page
-    header('Location: /donation/thank-you.php?id=' . $donationId);
+    header('Location: /thank-you.php?id=' . $donationId);
     exit;
 
 } catch (PDOException $e) {
@@ -107,7 +107,7 @@ try {
     }
     
     $_SESSION['error'] = 'An error occurred while processing your donation. Please try again.';
-    header('Location: /donation/donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
+    header('Location: /donate.php' . ($campaignId > 0 ? '?campaign=' . $campaignId : ''));
     exit;
 }
 ?>

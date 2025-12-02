@@ -24,7 +24,7 @@ $featuredCampaigns = $stmt->fetchAll();
             <div class="col-lg-8 mx-auto">
                 <h1 class="display-4 fw-bold mb-4">Make a Difference Today</h1>
                 <p class="lead mb-4">Your generosity can change lives. Join thousands of donors making an impact in communities around the world.</p>
-                <a href="/donation/donate.php" class="btn btn-light btn-lg px-5">
+                <a href="/donate.php" class="btn btn-light btn-lg px-5">
                     <i class="bi bi-heart-fill me-2"></i>Donate Now
                 </a>
             </div>
@@ -75,7 +75,7 @@ $featuredCampaigns = $stmt->fetchAll();
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
                     <?php if ($campaign['image']): ?>
-                    <img src="/donation/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($campaign['title']); ?>" style="height: 200px; object-fit: cover;">
+                    <img src="/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($campaign['title']); ?>" style="height: 200px; object-fit: cover;">
                     <?php else: ?>
                     <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
                         <i class="bi bi-image text-white" style="font-size: 3rem;"></i>
@@ -103,14 +103,14 @@ $featuredCampaigns = $stmt->fetchAll();
                                 <strong>$<?php echo formatCurrency($campaign['goal_amount']); ?></strong>
                             </div>
                         </div>
-                        <a href="/donation/campaign.php?id=<?php echo $campaign['id']; ?>" class="btn btn-primary w-100">View Details</a>
+                        <a href="/campaign.php?id=<?php echo $campaign['id']; ?>" class="btn btn-primary w-100">View Details</a>
                     </div>
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
         <div class="text-center mt-4">
-            <a href="/donation/campaigns.php" class="btn btn-outline-primary btn-lg">View All Campaigns</a>
+            <a href="/campaigns.php" class="btn btn-outline-primary btn-lg">View All Campaigns</a>
         </div>
     </div>
 </section>
@@ -201,7 +201,7 @@ $featuredCampaigns = $stmt->fetchAll();
     <div class="container">
         <h2 class="display-5 fw-bold mb-3">Ready to Make an Impact?</h2>
         <p class="lead mb-4">Every donation counts. Join us in creating positive change.</p>
-        <a href="/donation/donate.php" class="btn btn-light btn-lg px-5">
+        <a href="/donate.php" class="btn btn-light btn-lg px-5">
             <i class="bi bi-heart-fill me-2"></i>Start Donating
         </a>
     </div>

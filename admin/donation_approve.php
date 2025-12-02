@@ -41,7 +41,7 @@ if ($donationId > 0) {
     }
 }
 
-header('Location: /donation/admin/donations.php');
+header('Location: /admin/donations.php');
 exit;
 ?>
 

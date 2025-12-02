@@ -31,7 +31,7 @@ if ($campaignId > 0) {
     }
 }
 
-header('Location: /donation/admin/campaigns.php');
+header('Location: /admin/campaigns.php');
 exit;
 ?>
 

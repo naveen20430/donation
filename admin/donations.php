@@ -42,7 +42,7 @@ $campaigns = $stmt->fetchAll();
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Manage Donations</h1>
-    <a href="/donation/admin/donations_export.php?<?php echo http_build_query($_GET); ?>" class="btn btn-success">
+    <a href="/admin/donations_export.php?<?php echo http_build_query($_GET); ?>" class="btn btn-success">
         <i class="bi bi-download me-2"></i>Export CSV
     </a>
 </div>
@@ -128,14 +128,14 @@ $campaigns = $stmt->fetchAll();
                         </td>
                         <td><?php echo formatDateTime($donation['donated_at']); ?></td>
                         <td>
-                            <a href="/donation/admin/donation_view.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-info">
+                            <a href="/admin/donation_view.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-info">
                                 <i class="bi bi-eye"></i>
                             </a>
                             <?php if ($donation['status'] === 'pending'): ?>
-                            <a href="/donation/admin/donation_approve.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-success" onclick="return confirm('Approve this donation?');">
+                            <a href="/admin/donation_approve.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-success" onclick="return confirm('Approve this donation?');">
                                 <i class="bi bi-check"></i>
                             </a>
-                            <a href="/donation/admin/donation_reject.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Reject this donation?');">
+                            <a href="/admin/donation_reject.php?id=<?php echo $donation['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Reject this donation?');">
                                 <i class="bi bi-x"></i>
                             </a>
                             <?php endif; ?>

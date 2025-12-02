@@ -29,7 +29,7 @@ $csrfToken = generateCSRFToken();
         <h5 class="mb-0">Change Password</h5>
     </div>
     <div class="card-body">
-        <form action="/donation/admin/settings_save.php" method="POST">
+        <form action="/admin/settings_save.php" method="POST">
             <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
 
             <div class="mb-3">

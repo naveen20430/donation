@@ -97,7 +97,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
 
                 <div class="text-center mt-5">
-                    <a href="/donation/donate.php" class="btn btn-primary btn-lg px-5">
+                    <a href="/donate.php" class="btn btn-primary btn-lg px-5">
                         <i class="bi bi-heart-fill me-2"></i>Join Us Today
                     </a>
                 </div>

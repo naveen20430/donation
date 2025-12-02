@@ -13,7 +13,7 @@ $stmt->execute([$campaignId]);
 $campaign = $stmt->fetch();
 
 if (!$campaign) {
-    header('Location: /donation/campaigns.php');
+    header('Location: /campaigns.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ $daysLeft = $campaign['deadline'] ? ceil((strtotime($campaign['deadline']) - tim
         <div class="row">
             <div class="col-lg-8 mb-4">
                 <?php if ($campaign['image']): ?>
-                <img src="/donation/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="img-fluid rounded shadow mb-4" alt="<?php echo htmlspecialchars($campaign['title']); ?>">
+                <img src="/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="img-fluid rounded shadow mb-4" alt="<?php echo htmlspecialchars($campaign['title']); ?>">
                 <?php endif; ?>
                 
                 <h1 class="display-5 fw-bold mb-3"><?php echo htmlspecialchars($campaign['title']); ?></h1>
@@ -72,7 +72,7 @@ $daysLeft = $campaign['deadline'] ? ceil((strtotime($campaign['deadline']) - tim
                         </div>
                         <?php endif; ?>
 
-                        <a href="/donation/donate.php?campaign=<?php echo $campaign['id']; ?>" class="btn btn-primary btn-lg w-100">
+                        <a href="/donate.php?campaign=<?php echo $campaign['id']; ?>" class="btn btn-primary btn-lg w-100">
                             <i class="bi bi-heart-fill me-2"></i>Donate Now
                         </a>
                     </div>

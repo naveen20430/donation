@@ -76,7 +76,7 @@ function isAdminLoggedIn() {
  */
 function requireAdminLogin() {
     if (!isAdminLoggedIn()) {
-        header('Location: /donation/admin/login.php');
+        header('Location: /admin/login.php');
         exit;
     }
 }

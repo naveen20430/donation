@@ -61,7 +61,7 @@ $csrfToken = generateCSRFToken();
                         </div>
                         <?php endif; ?>
 
-                        <form action="/donation/process_contact.php" method="POST">
+                        <form action="/process_contact.php" method="POST">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
 
                             <div class="row">

@@ -72,10 +72,10 @@ if ($donationId > 0) {
                 </div>
 
                 <div class="mt-4">
-                    <a href="/donation/index.php" class="btn btn-primary btn-lg me-2">
+                    <a href="/index.php" class="btn btn-primary btn-lg me-2">
                         <i class="bi bi-house me-2"></i>Return Home
                     </a>
-                    <a href="/donation/campaigns.php" class="btn btn-outline-primary btn-lg">
+                    <a href="/campaigns.php" class="btn btn-outline-primary btn-lg">
                         <i class="bi bi-heart me-2"></i>View More Campaigns
                     </a>
                 </div>

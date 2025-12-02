@@ -8,14 +8,14 @@ require_once __DIR__ . '/includes/functions.php';
 
 // Check if POST request
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /donation/contact.php');
+    header('Location: /contact.php');
     exit;
 }
 
 // Verify CSRF token
 if (!isset($_POST['csrf_token']) || !verifyCSRFToken($_POST['csrf_token'])) {
     $_SESSION['error'] = 'Invalid security token. Please try again.';
-    header('Location: /donation/contact.php');
+    header('Location: /contact.php');
     exit;
 }
 
@@ -28,13 +28,13 @@ $message = sanitizeInput($_POST['message'] ?? '');
 // Validation
 if (empty($name) || empty($email) || empty($subject) || empty($message)) {
     $_SESSION['error'] = 'All fields are required.';
-    header('Location: /donation/contact.php');
+    header('Location: /contact.php');
     exit;
 }
 
 if (!validateEmail($email)) {
     $_SESSION['error'] = 'Please provide a valid email address.';
-    header('Location: /donation/contact.php');
+    header('Location: /contact.php');
     exit;
 }
 
@@ -56,7 +56,7 @@ if (mail($to, $emailSubject, $emailMessage, $headers)) {
     $_SESSION['error'] = 'Sorry, there was an error sending your message. Please try again later.';
 }
 
-header('Location: /donation/contact.php');
+header('Location: /contact.php');
 exit;
 ?>
 

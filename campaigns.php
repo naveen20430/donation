@@ -29,7 +29,7 @@ $campaigns = $stmt->fetchAll();
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 shadow-sm">
                     <?php if ($campaign['image']): ?>
-                    <img src="/donation/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($campaign['title']); ?>" style="height: 250px; object-fit: cover;">
+                    <img src="/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($campaign['title']); ?>" style="height: 250px; object-fit: cover;">
                     <?php else: ?>
                     <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" style="height: 250px;">
                         <i class="bi bi-image text-white" style="font-size: 4rem;"></i>
@@ -73,7 +73,7 @@ $campaigns = $stmt->fetchAll();
                         </div>
                         <?php endif; ?>
 
-                        <a href="/donation/campaign.php?id=<?php echo $campaign['id']; ?>" class="btn btn-primary w-100">
+                        <a href="/campaign.php?id=<?php echo $campaign['id']; ?>" class="btn btn-primary w-100">
                             <i class="bi bi-arrow-right me-2"></i>View Details & Donate
                         </a>
                     </div>

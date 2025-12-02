@@ -8,7 +8,7 @@ require_once __DIR__ . '/../includes/functions.php';
 
 // Redirect if already logged in
 if (isAdminLoggedIn()) {
-    header('Location: /donation/admin/dashboard.php');
+    header('Location: /admin/dashboard.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['admin_id'] = $admin['id'];
                     $_SESSION['admin_name'] = $admin['name'];
                     $_SESSION['admin_email'] = $admin['email'];
-                    header('Location: /donation/admin/dashboard.php');
+                    header('Location: /admin/dashboard.php');
                     exit;
                 } else {
                     $error = 'Invalid password. Please check your password and try again.';

@@ -96,7 +96,7 @@ $recentDonations = $stmt->fetchAll();
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="mb-0">Recent Donations</h5>
-        <a href="/donation/admin/donations.php" class="btn btn-sm btn-primary">View All</a>
+        <a href="/admin/donations.php" class="btn btn-sm btn-primary">View All</a>
     </div>
     <div class="card-body">
         <?php if (empty($recentDonations)): ?>

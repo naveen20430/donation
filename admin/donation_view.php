@@ -11,14 +11,14 @@ $donation = $stmt->fetch();
 
 if (!$donation) {
     $_SESSION['error'] = 'Donation not found.';
-    header('Location: /donation/admin/donations.php');
+    header('Location: /admin/donations.php');
     exit;
 }
 ?>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Donation Details #<?php echo $donation['id']; ?></h1>
-    <a href="/donation/admin/donations.php" class="btn btn-secondary">Back to Donations</a>
+    <a href="/admin/donations.php" class="btn btn-secondary">Back to Donations</a>
 </div>
 
 <div class="row">
@@ -85,7 +85,7 @@ if (!$donation) {
                 <h5 class="mb-0">Payment Proof</h5>
             </div>
             <div class="card-body">
-                <a href="/donation/uploads/<?php echo htmlspecialchars($donation['proof_file']); ?>" target="_blank" class="btn btn-primary">
+                <a href="/uploads/<?php echo htmlspecialchars($donation['proof_file']); ?>" target="_blank" class="btn btn-primary">
                     <i class="bi bi-download me-2"></i>View/Download Proof
                 </a>
             </div>
@@ -101,10 +101,10 @@ if (!$donation) {
             <div class="card-body">
                 <?php if ($donation['status'] === 'pending'): ?>
                 <div class="d-grid gap-2">
-                    <a href="/donation/admin/donation_approve.php?id=<?php echo $donation['id']; ?>" class="btn btn-success" onclick="return confirm('Approve this donation?');">
+                    <a href="/admin/donation_approve.php?id=<?php echo $donation['id']; ?>" class="btn btn-success" onclick="return confirm('Approve this donation?');">
                         <i class="bi bi-check-circle me-2"></i>Approve Donation
                     </a>
-                    <a href="/donation/admin/donation_reject.php?id=<?php echo $donation['id']; ?>" class="btn btn-danger" onclick="return confirm('Reject this donation?');">
+                    <a href="/admin/donation_reject.php?id=<?php echo $donation['id']; ?>" class="btn btn-danger" onclick="return confirm('Reject this donation?');">
                         <i class="bi bi-x-circle me-2"></i>Reject Donation
                     </a>
                 </div>

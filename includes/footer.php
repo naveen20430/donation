@@ -11,11 +11,11 @@
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/donation/index.php" class="text-light text-decoration-none">Home</a></li>
-                        <li><a href="/donation/campaigns.php" class="text-light text-decoration-none">Campaigns</a></li>
-                        <li><a href="/donation/donate.php" class="text-light text-decoration-none">Donate</a></li>
-                        <li><a href="/donation/about.php" class="text-light text-decoration-none">About Us</a></li>
-                        <li><a href="/donation/contact.php" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="/index.php" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="/campaigns.php" class="text-light text-decoration-none">Campaigns</a></li>
+                        <li><a href="/donate.php" class="text-light text-decoration-none">Donate</a></li>
+                        <li><a href="/about.php" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="/contact.php" class="text-light text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -33,7 +33,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/donation/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
 

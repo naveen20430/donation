@@ -8,12 +8,12 @@ $csrfToken = generateCSRFToken();
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Add New Campaign</h1>
-    <a href="/donation/admin/campaigns.php" class="btn btn-secondary">Back to Campaigns</a>
+    <a href="/admin/campaigns.php" class="btn btn-secondary">Back to Campaigns</a>
 </div>
 
 <div class="card">
     <div class="card-body">
-        <form action="/donation/admin/campaign_save.php" method="POST" enctype="multipart/form-data">
+        <form action="/admin/campaign_save.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
             <input type="hidden" name="action" value="add">
 
@@ -45,7 +45,7 @@ $csrfToken = generateCSRFToken();
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="/donation/admin/campaigns.php" class="btn btn-secondary">Cancel</a>
+                <a href="/admin/campaigns.php" class="btn btn-secondary">Cancel</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save me-2"></i>Save Campaign
                 </button>

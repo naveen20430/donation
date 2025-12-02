@@ -13,19 +13,19 @@ $campaign = $stmt->fetch();
 
 if (!$campaign) {
     $_SESSION['error'] = 'Campaign not found.';
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 }
 ?>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Edit Campaign</h1>
-    <a href="/donation/admin/campaigns.php" class="btn btn-secondary">Back to Campaigns</a>
+    <a href="/admin/campaigns.php" class="btn btn-secondary">Back to Campaigns</a>
 </div>
 
 <div class="card">
     <div class="card-body">
-        <form action="/donation/admin/campaign_save.php" method="POST" enctype="multipart/form-data">
+        <form action="/admin/campaign_save.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
             <input type="hidden" name="action" value="edit">
             <input type="hidden" name="campaign_id" value="<?php echo $campaign['id']; ?>">
@@ -55,7 +55,7 @@ if (!$campaign) {
             <div class="mb-3">
                 <label class="form-label">Current Image</label>
                 <div>
-                    <img src="/donation/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" alt="Current" style="max-width: 300px; height: auto;" class="img-thumbnail">
+                    <img src="/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" alt="Current" style="max-width: 300px; height: auto;" class="img-thumbnail">
                 </div>
             </div>
             <?php endif; ?>
@@ -67,7 +67,7 @@ if (!$campaign) {
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="/donation/admin/campaigns.php" class="btn btn-secondary">Cancel</a>
+                <a href="/admin/campaigns.php" class="btn btn-secondary">Cancel</a>
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save me-2"></i>Update Campaign
                 </button>

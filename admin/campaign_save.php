@@ -8,14 +8,14 @@ require_once __DIR__ . '/../includes/functions.php';
 requireAdminLogin();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 }
 
 // Verify CSRF token
 if (!isset($_POST['csrf_token']) || !verifyCSRFToken($_POST['csrf_token'])) {
     $_SESSION['error'] = 'Invalid security token.';
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ $deadline = !empty($_POST['deadline']) ? $_POST['deadline'] : null;
 // Validation
 if (empty($title) || empty($description) || $goalAmount <= 0) {
     $_SESSION['error'] = 'Please fill all required fields correctly.';
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 }
 
@@ -44,7 +44,7 @@ try {
             $imageFilename = $uploadResult['filename'];
         } else {
             $_SESSION['error'] = $uploadResult['message'];
-            header('Location: /donation/admin/campaigns.php');
+            header('Location: /admin/campaigns.php');
             exit;
         }
     }
@@ -78,12 +78,12 @@ try {
         $_SESSION['success'] = 'Campaign updated successfully!';
     }
 
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 
 } catch (PDOException $e) {
     $_SESSION['error'] = 'An error occurred while saving the campaign.';
-    header('Location: /donation/admin/campaigns.php');
+    header('Location: /admin/campaigns.php');
     exit;
 }
 ?>

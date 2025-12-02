@@ -45,7 +45,7 @@ if ($selectedCampaignId > 0) {
                         </div>
                         <?php endif; ?>
 
-                        <form action="/donation/process_donation.php" method="POST" enctype="multipart/form-data">
+                        <form action="/process_donation.php" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
 
                             <?php if ($selectedCampaign): ?>

@@ -10,7 +10,7 @@ $campaigns = $stmt->fetchAll();
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Manage Campaigns</h1>
-    <a href="/donation/admin/campaign_add.php" class="btn btn-primary">
+    <a href="/admin/campaign_add.php" class="btn btn-primary">
         <i class="bi bi-plus-circle me-2"></i>Add New Campaign
     </a>
 </div>
@@ -32,7 +32,7 @@ $campaigns = $stmt->fetchAll();
 <div class="card">
     <div class="card-body">
         <?php if (empty($campaigns)): ?>
-        <p class="text-muted text-center py-4">No campaigns found. <a href="/donation/admin/campaign_add.php">Create your first campaign</a>.</p>
+        <p class="text-muted text-center py-4">No campaigns found. <a href="/admin/campaign_add.php">Create your first campaign</a>.</p>
         <?php else: ?>
         <div class="table-responsive">
             <table class="table table-hover">
@@ -56,7 +56,7 @@ $campaigns = $stmt->fetchAll();
                         <td><?php echo $campaign['id']; ?></td>
                         <td>
                             <?php if ($campaign['image']): ?>
-                            <img src="/donation/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" alt="Campaign" style="width: 60px; height: 60px; object-fit: cover;" class="rounded">
+                            <img src="/uploads/<?php echo htmlspecialchars($campaign['image']); ?>" alt="Campaign" style="width: 60px; height: 60px; object-fit: cover;" class="rounded">
                             <?php else: ?>
                             <i class="bi bi-image text-muted" style="font-size: 2rem;"></i>
                             <?php endif; ?>
@@ -71,10 +71,10 @@ $campaigns = $stmt->fetchAll();
                         </td>
                         <td><?php echo $campaign['deadline'] ? formatDate($campaign['deadline']) : 'No deadline'; ?></td>
                         <td>
-                            <a href="/donation/admin/campaign_edit.php?id=<?php echo $campaign['id']; ?>" class="btn btn-sm btn-primary">
+                            <a href="/admin/campaign_edit.php?id=<?php echo $campaign['id']; ?>" class="btn btn-sm btn-primary">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <a href="/donation/admin/campaign_delete.php?id=<?php echo $campaign['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this campaign?');">
+                            <a href="/admin/campaign_delete.php?id=<?php echo $campaign['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this campaign?');">
                                 <i class="bi bi-trash"></i>
                             </a>
                         </td>

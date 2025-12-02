@@ -10,13 +10,13 @@ require_once __DIR__ . '/functions.php';
     <title><?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Donation Platform'; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/donation/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/donation/index.php">
+            <a class="navbar-brand fw-bold" href="/index.php">
                 <i class="bi bi-heart-fill me-2"></i>DonateNow
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,19 +25,19 @@ require_once __DIR__ . '/functions.php';
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/donation/index.php">Home</a>
+                        <a class="nav-link" href="/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/donation/campaigns.php">Campaigns</a>
+                        <a class="nav-link" href="/campaigns.php">Campaigns</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/donation/donate.php">Donate</a>
+                        <a class="nav-link" href="/donate.php">Donate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/donation/about.php">About</a>
+                        <a class="nav-link" href="/about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/donation/contact.php">Contact</a>
+                        <a class="nav-link" href="/contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
