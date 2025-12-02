@@ -1,0 +1,34 @@
+# Donation Website .htaccess
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(config|includes|\.htaccess|\.git)">
+    Deny from all
+</FilesMatch>
+
+# Allow access to specific config files if needed (adjust as necessary)
+# <FilesMatch "^database\.php$">
+#     Allow from all
+# </FilesMatch>
+
+# Enable error pages (optional)
+# ErrorDocument 404 /donation/404.php
+# ErrorDocument 500 /donation/500.php
+
+# PHP settings (if allowed by server)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 5M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Security headers (if mod_headers is enabled)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
