@@ -5,10 +5,10 @@
  */
 
 // Database credentials
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'donation');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'srv1499.hstgr.io');
+define('DB_NAME', 'u255007981_don');
+define('DB_USER', 'u255007981_don');
+define('DB_PASS', 'U255007981_don');
 define('DB_CHARSET', 'utf8mb4');
 
 // Create PDO connection
